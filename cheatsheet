@@ -1,12 +1,12 @@
-docker build . -t docker.hub-username/simple-server
+docker build . -t (docker hub username)/simple-server
 # not necessary but to test docker image itself
-docker run docker.hub-username/simple-server -p 3600:3600
-docker push docker.hub-username/simple-server
+docker run (docker hub username)/simple-server -p 3600:3600
+docker push (docker hub username)/simple-server
 
 #local only
 minikube start
-kubectl create deploy simple-server --image=fperezar/simple-server
-kubectl expose sserver --type=LoadBalancer --image=fperezar/simple-server
+kubectl create deploy simple-server --image=(docker hub username)/simple-server
+kubectl expose sserver --type=LoadBalancer --image=(docker hub username)/simple-server
 minikube service sserver
 
 #clean up
